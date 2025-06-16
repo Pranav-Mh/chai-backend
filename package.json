@@ -14,6 +14,7 @@
   "author": "Pranav mhaisdhune",
   "license": "ISC",
   "devDependencies": {
-    "nodemo": "^1.0.0"
+    "nodemo": "^1.0.0",
+    "prettier": "^3.5.3"
   }
 }
