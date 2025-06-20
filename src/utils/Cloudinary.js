@@ -10,7 +10,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDBNARY_API_SECRET
 });
 
-const uploadOnCloudnary = async (localFilePath) => {
+const uploadOnCloudinary = async (localFilePath) => {
     try{
         if(!localFilePath) return null
         //  Upload the file to Cloudinary
@@ -18,7 +18,8 @@ const uploadOnCloudnary = async (localFilePath) => {
             resource_type:"auto"
         })
         //file has been uploaded suceesfully
-        console.log("File is uploaded Sucesfully on Cloudnary",response.url)
+        //console.log("File is uploaded Sucesfully on Cloudnary",response.url)
+        fs.unlinkSync(localFilePath)
         return response
     }catch(error){
         fs.unlinkSync(localFilePath) // delete the file from local storage
@@ -26,4 +27,4 @@ const uploadOnCloudnary = async (localFilePath) => {
     }
 
 }
-export {uploadOnCloudnary}
+export { uploadOnCloudinary }; // ✅ correct spelling
